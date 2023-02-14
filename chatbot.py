@@ -25,7 +25,7 @@ class ChatBot:
         return "Srijan Dutta"
 
     def bot(self, message):
-        openai.api_key = os.getenv("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")
+        openai.api_key = os.environ('OPENAI_API_KEY')
         response = openai.Completion.create(model="text-davinci-003", prompt=message, temperature=1, max_tokens=15)
         return response
     
